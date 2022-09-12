@@ -11,11 +11,14 @@ print(task)
 
 def get_triangle_side(a, b, c):
     if   str(a) == 'x':
-        a = sqrt(b**2 - c**2)
+        x = round(sqrt(int(b)**2 - int(c)**2), 2)
+        return x, b, c
     elif str(b) == 'x':
-        b = sqrt(a**2 + c**2)
+        x = round(sqrt(int(a)**2 + int(c)**2), 2)
+        return a, x, c
     elif str(c) == 'x':
-        c = sqrt(b**2 - a**2)
+        x = round(sqrt(int(b)**2 - int(a)**2), 2)
+        return a, b, x
     else:
         return a, b, c
 
@@ -37,10 +40,10 @@ def print_triangle(a, b, c):
 
      |\\
      | \\
-    {}|  \\ {}
+  {:>3}|  \\ {:<3}
      |   \\
      |____\\
-        {}
+      {:>3}
 
     """.format(a, b, c))
 
